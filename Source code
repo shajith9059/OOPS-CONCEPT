@@ -1,0 +1,110 @@
+class Area {
+
+  // fields to calculate area
+  int length;
+  int breadth;
+
+  // constructor to initialize values
+  Area(int length, int breadth) {
+    this.length = length;
+    this.breadth = breadth;
+  }
+
+  // method to calculate area
+  public void getArea() {
+    int area = length * breadth;
+    System.out.println("Area: " + area);
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+
+    // create object of Area
+    // pass value of length and breadth
+    Area rectangle = new Area(5, 6);
+    rectangle.getArea();
+  }
+}
+
+class Animal {
+
+  // field and method of the parent class
+  String name;
+  public void eat() {
+    System.out.println("I can eat");
+  }
+}
+
+// inherit from Animal
+class Dog extends Animal {
+
+  // new method in subclass
+  public void display() {
+    System.out.println("My name is " + name);
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+
+    // create an object of the subclass
+    Dog labrador = new Dog();
+
+    // access field of superclass
+    labrador.name = "Rohu";
+    labrador.display();
+
+    // call method of superclass
+    // using object of subclass
+    labrador.eat();
+
+  }
+}
+
+abstract class Language {
+
+  // method of abstract class
+  public void display() {
+    System.out.println("This is Java Programming");
+  }
+}
+
+class Main extends Language {
+
+  public static void main(String[] args) {
+    
+    // create an object of Main
+    Main obj = new Main();
+
+    // access method of abstract class
+    // using object of Main class
+    obj.display();
+  }
+}
+
+class Language {
+  public void displayInfo() {
+    System.out.println("Common English Language");
+  }
+}
+
+class Java extends Language {
+  @Override
+  public void displayInfo() {
+    System.out.println("Java Programming Language");
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+
+    // create an object of Java class
+    Java j1 = new Java();
+    j1.displayInfo();
+
+    // create an object of Language class
+    Language l1 = new Language();
+    l1.displayInfo();
+  }
+}
